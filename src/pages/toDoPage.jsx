@@ -29,6 +29,14 @@ export const ToDoPage = () => {
     setTasksList(newTasksList);
   }
 
+  const toggleTaskStatus = (id) => {
+    const taskIndex = tasksList.indexOf(tasksList.find(task => task.id == id));
+console.log(tasksList[taskIndex].isDone)
+
+    tasksList[taskIndex].isDone = !tasksList[taskIndex].isDone;
+    setTasksList(tasksList);
+  }
+
   const inputHandler = ({ target: { value } }) => {
     setInput(value);
   }
@@ -52,7 +60,7 @@ export const ToDoPage = () => {
           </div>
         </form>
         <div id='taskList'>
-          <TaskList tasksList={tasksList} removeTask={removeTask} />
+          <TaskList tasksList={tasksList} removeTask={removeTask} toggleTaskStatus={toggleTaskStatus}/>
         </div>
       </main>
     </>
