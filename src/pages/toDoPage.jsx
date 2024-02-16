@@ -31,8 +31,6 @@ export const ToDoPage = () => {
 
   const toggleTaskStatus = (id) => {
     const taskIndex = tasksList.indexOf(tasksList.find(task => task.id == id));
-console.log(tasksList[taskIndex].isDone)
-
     tasksList[taskIndex].isDone = !tasksList[taskIndex].isDone;
     setTasksList(tasksList);
   }
