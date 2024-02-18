@@ -30,7 +30,7 @@
 }
 
 #addButton:disabled {
-  color: gray;
+  opacity: 50%;
 }
 
 #taskList {
@@ -63,7 +63,7 @@
 .removeButton {
   display: flex;
   justify-content: center;
-  background-color: rgba(228, 0, 0, 0.3); 
+  background-color: rgba(128, 0, 0, 0.7); 
   width: 1.8rem;
   height: 1.8rem;
   place-items: center;
@@ -81,23 +81,21 @@
   justify-content: center;
   border: none;
   border-radius: 5px;
-  background-color: rgba(0, 228, 0, 0.3);
+  background-color: rgba(0, 128, 0, 0.7);
   width: 1.8rem;
   height: 1.8rem;
 
 }
 
 .taskCheckbox {
+  position: relative;
   accent-color: rgb(88, 125, 77);
   width: 1.1rem;
   height: 1.1rem;
 }
 
-.taskCheckbox:checked {
-  background: rgba(100,0,0,1);
-}
-
 .task:has(> div > .taskCheckbox:checked) {
   opacity: 50%;
+  order: 2;
 }
 
